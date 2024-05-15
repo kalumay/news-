@@ -18,12 +18,21 @@
       margin: 0;
       padding: 0;
     }
+    /* Add this media query */
+@media (max-width: 375px) {
+  .container,
+  .first, .second {
+    flex-direction: column !important;
+  }
+  .two {
+    flex:10;
+  }
+}
       .main {
         font-size: 15px;
         display: flex;
         flex-direction: column;
-        padding: 32px;
-        padding-top: 32px;
+        padding: 64px;
         font-family: "Inter", sans-serif;
         font-optical-sizing: auto;
         font-weight: auto;
@@ -31,6 +40,7 @@
         max-width: 100%;
         height: 100%;
         overflow-x: auto;
+        color: hsl(236, 13%, 42%)
     }
     .main li {
       list-style-type: none;
@@ -43,14 +53,25 @@
       padding: 16px;
       padding-right: 0px;
     }
-    .nav-bar nav li a {
-      color: gray; /* Set the color to gray */
-      text-decoration: none; /* Remove underline */
-      font-size: 15px;
-      padding: 24px;
+    .nav-bar nav ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
       padding-right: 0px;
-      gap: 128px;
+      gap: 24px;
     }
+    .nav-bar li a{
+            color: gray; /* Set the color to gray */
+      text-decoration:dashed; /* Remove underline */
+      font-size: 16px;
+    }
+
+    .nav-bar li a:hover {
+      color: #F1A336;
+  }
+
     .nav-bar nav {
       display: flex;
       flex-direction: row;
@@ -60,95 +81,155 @@
     .first {
       display: flex;
       flex-direction: row;
-      height: min-content;
-      gap: 16px;
-      padding-bottom: 0%;
+      gap: 32px;
     }
     .coll {
       display: flex;
       flex-direction: column;
+      padding: 0px;
     }
     .coll img{
       width: 100%;
-      height: 80%;
+      height: 100%;
     }
     .one {
       display: flex;
       flex-direction: column;
-      flex:7;
+      flex:10;
+      height: fit-content;
       width: calc(7 / 10 * 100%);
-      padding: 0%;
+      padding: 0px;
     }
     .bs {
       display: flex;
       flex-direction: row;
-      padding: 8px;
+      padding: 0px;
     }
     
     .bs h1 {
-      font-weight:800;
-      font-size: 1000;
       color: hsl(240, 100%, 5%);
+      font-weight: 800;
+      width: 80rem;
+      line-height: 3.5rem;
+      word-spacing: -0.1rem;
+      font-size: 3.5rem;
+      padding-top: 0px; /* Remove padding on top */
+      padding-bottom: 0px; /* Remove padding on bottom */
+      padding-right: 20px;
+
     }
     .small {
       display: flex;
       flex-direction: column;
-      padding: 20px;
-      gap: 16px;
-      justify-content: space-between;
+      padding:0px;
+      justify-content: space-around;
+      font-size: medium;
+      line-height: 1.5;
     }
     .small button {
       background-color: hsl(5, 85%, 63%);
       color: rgb(255, 255, 255);
       width: fit-content;
-      padding: 8px 32px;
+      padding: 16px 32px;
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 0cap;
-      font-weight: bold;
+      font-weight: 600;
+      letter-spacing: 3px;
+      font-size: medium;
+      border: none;
+      font-size: 0.9rem;
     }
+    .small button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    }
+
     .two {
-      padding: 16px;
-      gap: 16px;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      padding-bottom: 0px;
       background-color: hsl(240, 100%, 5%);
-      color: white;
-      flex:3;
+      flex:10;
       width: calc(3/ 10 * 100%);
     }
     .two h3{
       text-wrap: nowrap;
+      color: white;
     }
+    .two h3:hover{
+      color: #F1A336;
+      cursor: pointer;
+    }
+  .two hr {
+    margin: 16px 0;
+    border: 1px solid hsl(236, 13%, 42%);
+  }    
     .new {
       color: hsl(35, 77%, 62%);
       font-weight: 800;
       font-size: xx-large;
     }
+    .ai, .car, .vc {
+      padding:8px 0px;
+    }
     .second {
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
-      overflow-y:hidden;
-      padding: 32px;
-      width: 100%;
+      justify-content: space-between;
+      height: auto;
+      gap: 32px;
+      padding: 50px;
+      padding-left: 0%;
+      padding-right: 0;
+      align-items: stretch;
+      margin: 0;
+      margin-block: 0;
     }
-    .second img {
-      height: 150px;
-      width: 150px;
-    }
-    .a {
+.second img {
+  width: auto;
+  max-height: 150px;
+}
+    .a , .b , .c{
       display: flex;
       flex-direction: row;
+      padding: 0px;
+      height: auto;
+      margin: 0;
+      margin-block: 0;
     }
-    .b {
-      display: flex;
-      flex-direction: row;
-    }
-    .c {
-      display: flex;
-      flex-direction: row;
-    }
-
+.ccol{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0px;
+  padding: 0%;
+  padding-left: 20px;
+  justify-content: space-between;
+}
+.ccol h4 {
+  color: hsl(233, 8%, 79%);
+  font-size: 30px;
+  gap: 0px;
+  padding: 0%;
+  margin: 0;
+  margin-block: 0;
+}
+.ccol h3 {
+  color: black;
+  margin: 0;
+  margin-block: 0;
+  text-wrap: nowrap;
+}
+.ccol h3:hover{
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+.ccol p{
+  line-height: 2em;
+}
 
   </style>
 </head>
@@ -157,13 +238,15 @@
     <div class="nav-bar">
       <img src="./assets/images/logo.svg" alt="">
 <nav>
+  <ul>
  <li><a href="#">Home</a></li>
  <li><a href="new">New</a> </li>
   <li><a href="popular">Popular</a></li>
  <li><a href="trending">Trending</a> </li>
-  <li><a href="categories">Categories</a></li>
+  <li><a href="categories">Categories</a></li></ul>
 </nav>
 </div>
+
 <div class="first">
   
   <div class="one">
@@ -177,20 +260,23 @@
 <div class="small">
   We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
   But is it really fulfilling its promise?
-<button class="button">Read more</button>
+<button class="button">READ MORE</button>
   </div>
 </div>
 </div>
 <div class="two">
 
  <div class="new">New </div> 
+ 
 <div class="car">
   <h3>Hydrogen VS Electric Cars</h3>
-  Will hydrogen-fueled cars ever catch up to EVs?</div><hr>
+  Will hydrogen-fueled cars ever catch up to EVs?</div>
+  <hr>
 <div class="ai">
   <h3>The Downsides of AI Artistry</h3>
   What are the possible adverse effects of on-demand AI image generation?
-</div> <hr>
+</div> 
+<hr>
 <div class="vc">
  <h3> Is VC Funding Drying Up?</h3>
   Private funding by VC firms is down 50% YOY. We take a look at what that means.
@@ -199,22 +285,23 @@
 <div class="second">
   <div class="a">
     <img src="./assets/images/image-retro-pcs.jpg" alt="">
-    <div class="ccol"><h4>01</h4>
+    <div class="ccol">
+      <h4>01</h4>
  <h3> Reviving Retro PCs</h3>
-  What happens when old PCs are given modern upgrades?
+ <p> What happens when old PCs are given modern upgrades?</p>
 </div></div>
 <div class="b">
   <img src="./assets/images/image-top-laptops.jpg" alt="">
   <div class="ccol"><h4>02</h4>
   <h3>Top 10 Laptops of 2022</h3>
-  Our best picks for various needs and budgets.
+  <p>Our best picks for various needs and budgets.</p>
 </div></div>
 <div class="c">
   <img src="./assets/images/image-gaming-growth.jpg" alt="">
   <div class="ccol">
  <h4> 03</h4>
   <h3>The Growth of Gaming</h3>
-  How the pandemic has sparked fresh opportunities.
+  <p>How the pandemic has sparked fresh opportunities.</p>
 </div></div>
   </div>
 </div>
